@@ -12,7 +12,9 @@ from datacube.utils import geometry
 import pickle
 import sys
 
-# dict of cyclone names refering to either track csv data or windfield tif data (can't tell atm)
+# LF = land fall of cyclone
+# cyclones that made multiple land fall were treated as seperate cyclones
+# dict is proabaly just a mapping between filenames on NCI
 cyclone_name = {
     'Ingrid_Landfall2':'IngridLF2',
     'Laurence':'Laurence',
@@ -31,7 +33,7 @@ cyclone_name = {
     }
 
 
-# I think these are in knots?
+# converting to knots
 windspeed_category = {'C1': [0., 125*1000/60**2],
                         'C2':[125*1000/60**2, 165*1000/60**2],
                         'C3': [165*1000/60**2, 225*1000/60**2], 
@@ -195,7 +197,9 @@ def main(sname=None):
         # find all datasets for mangrove canopy cover before cyclone
         bc_datasets = dc.find_datasets(product = 'ga_ls_mangrove_cover_cyear_3',time=time_before_cyclone, geopolygon=geobox)
         
-        ###### not sure what this next loop does...
+        # There are two extents of the cyclone, this loop makes sure it gets the smaller extent (I think)
+        # rather than the larger windfield extent
+        # code is here before the next line of group bc_datasets otherwise it doesn't work
         cyclone_extent = {}
         k = 0
         for d in bc_datasets:
@@ -222,7 +226,7 @@ def main(sname=None):
             # get bounding box of polygon with 25m res
             loading_box = geometry.GeoBox.from_geopolygon(loading_polygon, resolution=(25, -25))
             # run the function damage_level_by_geo
-            wind_cat, all_wind_cat = damage_level_by_geo(dc, 'cyclone_damage_results_chris', cname, 
+            wind_cat, all_wind_cat = damage_level_by_geo(dc, 'cyclone_damage_results', cname, 
                                                      cyclone_datasets, bc_datasets, ac_datasets, 
                                                      loading_box, windspeed_category, dump=True)
             

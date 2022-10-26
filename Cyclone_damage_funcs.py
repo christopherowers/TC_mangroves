@@ -38,7 +38,7 @@ def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_da
     cyclone_data: xr.dataset of the cyclone windfield
     bc_datasets: mangrove canopy cover datasets before the cyclone (using time from cyclone dataset)
     ac_datasets: mangrove canopy cover datasets after the cyclone (using time from cyclone dataset)
-    loading_box: bounding box (25m res) of the cyclone extent
+    loading_box: bounding box (30m res) of the cyclone extent
     dump: writing out cyclone damage results
     '''
     

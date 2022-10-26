@@ -15,6 +15,13 @@ import rioxarray
 dc = datacube.Datacube(app="cyclone mangroves")
 
 
+windspeed_category = {'C1': [0., 125*1000/60**2],
+                        'C2':[125*1000/60**2, 165*1000/60**2],
+                        'C3': [165*1000/60**2, 225*1000/60**2], 
+                        'C4': [225*1000/60**2, 280*1000/60**2],
+                        'C5': [280*1000/60**2, 9999.]}
+
+
 def categorize_damage(bc_canopy, ac_canopy):
     '''
     On the mangrove classes. Difference before cyclone and after cyclone.
@@ -24,7 +31,7 @@ def categorize_damage(bc_canopy, ac_canopy):
 
 
 
-def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_datasets, loading_box, windspeed_category, dump=True):
+def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_datasets, loading_box, dump=True):
     '''
     dir_name: directory output for results
     cyclone_name: string name
@@ -32,7 +39,6 @@ def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_da
     bc_datasets: mangrove canopy cover datasets before the cyclone (using time from cyclone dataset)
     ac_datasets: mangrove canopy cover datasets after the cyclone (using time from cyclone dataset)
     loading_box: bounding box (25m res) of the cyclone extent
-    windspeed_category: as above in dictionary
     dump: writing out cyclone damage results
     '''
     

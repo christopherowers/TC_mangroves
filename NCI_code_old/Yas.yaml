@@ -1,0 +1,62 @@
+creation_dt: 2019-04-03 17:13:40.124282
+extent:
+  center_dt: 2011-01-01 00:00:00
+  coord:
+    ll:
+      lat: -19.658472222185356
+      lon: 145.29680555606538
+    lr:
+      lat: -19.658472222185356
+      lon: 146.89597222275785
+    ul:
+      lat: -17.069305555476966
+      lon: 145.29680555606538
+    ur:
+      lat: -17.069305555476966
+      lon: 146.89597222275785
+  from_dt: 2011-01-01 00:00:00
+  to_dt: 2011-01-01 00:00:00
+format:
+  name: GeoTIFF
+grid_spatial:
+  projection:
+    geo_ref_points:
+      ll:
+        x: -19.658472222185356
+        y: 145.29680555606538
+      lr:
+        x: -19.658472222185356
+        y: 146.89597222275785
+      ul:
+        x: -17.069305555476966
+        y: 145.29680555606538
+      ur:
+        x: -17.069305555476966
+        y: 146.89597222275785
+    spatial_reference: GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]]
+    valid_data:
+      coordinates:
+      - - - 146.89597222275785
+          - -17.069305555476966
+        - - 145.29680555606538
+          - -17.069305555476966
+        - - 145.29680555606538
+          - -19.658472222185356
+        - - 146.89597222275785
+          - -19.658472222185356
+        - - 146.89597222275785
+          - -17.069305555476966
+      type: Polygon
+id: eedf0162-209b-5e56-a876-9c345f78ef30
+image:
+  bands:
+    wind_speed:
+      layer: 1
+      path: /g/data/r78/mangroves/FINALlocalWind/Yasi.tif
+instrument:
+  name: IDN
+lineage:
+  source_datasets: {}
+platform:
+  code: IDN
+product_type: windspeed

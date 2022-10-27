@@ -1,0 +1,17 @@
+name: cyclone_windspeed
+description: Wind speed for cyclones 
+metadata_type: eo
+metadata:
+  product_type: windspeed
+  format:
+    name: GeoTIFF
+  platform:
+    code: IDN 
+  instrument:
+    name: IDN 
+
+measurements:
+  - name: wind_speed
+    dtype: float32
+    nodata: 0 
+    units: '1'

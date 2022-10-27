@@ -98,7 +98,7 @@ def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_da
                 wind_damage = result.damage_level[0].where(np.logical_and(cyclone_data.wind_speed[0] >= value[0] 
                                             ,cyclone_data.wind_speed[0] < value[1]))
                 for i in range(0, 5): # damage levels
-                    wind_cat[i][key] = wind_damage.where(wind_damage == i).count().data * 0.025**2
+                    wind_cat[i][key] = wind_damage.where(wind_damage == i).count().data * 0.030**2
             print(wind_cat)
             all_damage_level = result.damage_level
         else:
@@ -138,7 +138,7 @@ def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_da
         wind_damage = results.damage_level[0].where(np.logical_and(cyclone_data.wind_speed[0] >= value[0],
                                 cyclone_data.wind_speed[0] < value[1]))
         for i in range(0, 5):
-            all_wind_cat[i+1][key] = wind_damage.where(wind_damage == (i+1)).count().data * 0.025**2
+            all_wind_cat[i+1][key] = wind_damage.where(wind_damage == (i+1)).count().data * 0.030**2
     print(all_wind_cat)
 
     return wind_cat, all_wind_cat

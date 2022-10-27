@@ -50,9 +50,10 @@ def damage_level_by_geo(dir_name, cyclone_name, cyclone_data, bc_datasets, ac_da
     immediate = 0
     
     # make sure dir exists, otherwise make, for result outputs
-    dir_name += '/' + cyclone_name
-    if path.exists(dir_name) == False:
-        os.mkdir(dir_name)
+    if dump:
+        dir_name += '/' + cyclone_name
+        if path.exists(dir_name) == False:
+            os.mkdir(dir_name)
     
     # for time in after cyclone mangrove canopy cover datasets
     for t in ac_datasets.time.data:

@@ -19,3 +19,21 @@ cyclone_damage_tally_notsure folder means it's not sure if mangrove is there on 
 some of it is in here
 `/g/data/r78/mangroves`
 
+
+`cyclone_time = {
+        'IngridLF1':  '2005-01-01T00:00:00',
+        'IngridLF2':   '2005-01-01T00:00:00', 
+        'IngridLF3':   '2005-01-01T00:00:00',
+        'Larry':  '2006-01-01T00:00:00',
+        'MonicaLF1':   '2006-01-01T00:00:00',    
+        'MonicaLF2':   '2006-01-01T00:00:00',
+        'George':  '2007-01-01T00:00:00',
+        'Laurence':    '2009-01-01T00:00:00',
+        'Yasi':    '2011-01-01T00:00:00',
+        'Ita': '2014-01-01T00:00:00',
+        'Lam': '2015-01-01T00:00:00',
+        'Marcia':  '2015-01-01T00:00:00',
+        'NathanLF1':   '2015-01-01T00:00:00',
+        'NathanLF2':  '2015-01-01T00:00:00',
+        'Debbie': '2017-01-01T00:00:00'
+        }`
